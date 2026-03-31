@@ -38,6 +38,8 @@ android {
     }
 }
 
+val natives by configurations.creating
+
 dependencies {
     val gdxVersion = "1.12.1"
     implementation(project(":core"))
@@ -48,7 +50,31 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")
 }
 
-// ネイティブライブラリをコピーするヘルパー
-fun DependencyHandler.natives(dependencyNotation: String) {
-    add("implementation", dependencyNotation)
+// ネイティブライブラリを jniLibs にコピーするタスク
+tasks.register("copyNatives") {
+    doLast {
+        val abiMap = mapOf(
+            "natives-armeabi-v7a" to "armeabi-v7a",
+            "natives-arm64-v8a" to "arm64-v8a",
+            "natives-x86" to "x86",
+            "natives-x86_64" to "x86_64"
+        )
+        natives.files.forEach { file ->
+            abiMap.forEach { (classifier, abi) ->
+                if (file.name.contains(classifier)) {
+                    val targetDir = layout.projectDirectory.dir("src/main/jniLibs/$abi").asFile
+                    targetDir.mkdirs()
+                    copy {
+                        from(zipTree(file))
+                        into(targetDir)
+                        include("*.so")
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.matching { it.name.contains("merge") && it.name.contains("JniLibFolders") }.configureEach {
+    dependsOn("copyNatives")
 }
