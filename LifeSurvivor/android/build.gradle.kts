@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    kotlin("android") version "1.9.22"
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -28,6 +28,7 @@ android {
         getByName("main") {
             java.srcDirs("src/main/kotlin")
             manifest.srcFile("AndroidManifest.xml")
+            jniLibs.srcDirs(file("build/libs/gdx-natives"))
         }
     }
 
@@ -44,6 +45,7 @@ dependencies {
     val gdxVersion = "1.12.1"
     implementation(project(":core"))
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
+
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86")
