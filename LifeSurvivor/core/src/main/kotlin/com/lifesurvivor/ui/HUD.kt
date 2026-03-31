@@ -11,9 +11,9 @@ import com.lifesurvivor.entity.Player
  * ヘッドアップディスプレイ
  * HP・XP・タイマー・キル数・時代名を表示
  *
- * レイアウト:
- * [HP ████████░░ 80/100]  [Lv.5]  [02:34]
- * [XP ████░░░░░░ 40%    ]  [x2.5k kills]
+ * レイアウト例:
+ * HP [##########] 80/100  Lv.5  02:34
+ * XP [####------] 40%     x2.5k kills
  */
 class HUD {
     private val barWidth = 200f

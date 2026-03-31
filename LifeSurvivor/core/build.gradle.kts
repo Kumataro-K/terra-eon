@@ -1,12 +1,11 @@
 plugins {
-    kotlin("jvm") version "1.9.22"
+    `java-library`
+    kotlin("jvm")
 }
 
 dependencies {
     val gdxVersion = "1.12.1"
     api("com.badlogicgames.gdx:gdx:$gdxVersion")
-    api("com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion")
-    api("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop")
 }
 
 java {
