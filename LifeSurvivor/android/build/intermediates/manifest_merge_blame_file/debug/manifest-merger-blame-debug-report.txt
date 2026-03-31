@@ -25,29 +25,30 @@
 19-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:6:9-43
 20        android:label="Life Survivor"
 20-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:7:9-38
-21        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-21-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:8:9-67
-22        <activity
-22-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:10:9-19:20
-23            android:name="com.lifesurvivor.android.AndroidLauncher"
-23-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:11:13-68
-24            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
-24-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:12:13-107
-25            android:exported="true"
-25-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:13:13-36
-26            android:screenOrientation="landscape" >
-26-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:14:13-50
-27            <intent-filter>
-27-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:15:13-18:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:16:17-69
-28-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:16:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:17:17-77
-30-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:17:27-74
-31            </intent-filter>
-32        </activity>
-33    </application>
-34
-35</manifest>
+21        android:testOnly="true"
+22        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+22-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:8:9-67
+23        <activity
+23-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:10:9-19:20
+24            android:name="com.lifesurvivor.android.AndroidLauncher"
+24-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:11:13-68
+25            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
+25-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:12:13-107
+26            android:exported="true"
+26-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:13:13-36
+27            android:screenOrientation="landscape" >
+27-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:14:13-50
+28            <intent-filter>
+28-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:15:13-18:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:16:17-69
+29-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:16:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:17:17-77
+31-->C:\Users\strom\AndroidStudioProjects\terra-eon\LifeSurvivor\android\AndroidManifest.xml:17:27-74
+32            </intent-filter>
+33        </activity>
+34    </application>
+35
+36</manifest>
