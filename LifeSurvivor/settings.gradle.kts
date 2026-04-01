@@ -15,4 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-include(":core", ":android", ":desktop")
+include(":core", ":app", ":desktop")
+project(":app").projectDir = file("android")
