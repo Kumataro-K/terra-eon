@@ -28,7 +28,8 @@ android {
         getByName("main") {
             java.srcDirs("src/main/kotlin")
             manifest.srcFile("AndroidManifest.xml")
-            jniLibs.srcDirs(file("build/libs/gdx-natives"))
+            // デフォルトの src/main/jniLibs を無効化し、build 配下のみ使用
+            jniLibs.setSrcDirs(listOf(file("build/libs/gdx-natives")))
         }
     }
 
@@ -52,8 +53,10 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")
 }
 
-// ネイティブライブラリを jniLibs にコピーするタスク
-tasks.register("copyNatives") {
+// ネイティブライブラリを build/libs/gdx-natives にコピー
+val copyNatives = tasks.register("copyNatives") {
+    val outputDir = layout.buildDirectory.dir("libs/gdx-natives")
+    outputs.dir(outputDir)
     doLast {
         val abiMap = mapOf(
             "natives-armeabi-v7a" to "armeabi-v7a",
@@ -64,7 +67,7 @@ tasks.register("copyNatives") {
         natives.files.forEach { file ->
             abiMap.forEach { (classifier, abi) ->
                 if (file.name.contains(classifier)) {
-                    val targetDir = layout.projectDirectory.dir("src/main/jniLibs/$abi").asFile
+                    val targetDir = outputDir.get().dir(abi).asFile
                     targetDir.mkdirs()
                     copy {
                         from(zipTree(file))
@@ -78,5 +81,5 @@ tasks.register("copyNatives") {
 }
 
 tasks.matching { it.name.contains("merge") && it.name.contains("JniLibFolders") }.configureEach {
-    dependsOn("copyNatives")
+    dependsOn(copyNatives)
 }
