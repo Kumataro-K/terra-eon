@@ -163,6 +163,14 @@ cd LifeSurvivor
 
 APKは `android/build/outputs/apk/debug/` に出力されます。
 
+
+## Android StudioでSyncできない場合（`error: module not specified`）
+
+- **開くフォルダはリポジトリ直下 (`terra-eon/`) を推奨**（本修正で直下から `:android` / `:core` / `:desktop` を解決可能）。
+- 既にAndroid Studioで別フォルダを開いている場合は、一度プロジェクトを閉じてから開き直してください。
+- `Gradle JDK` は **17** を指定してください。
+- うまくいかない場合は `File > Invalidate Caches...` 実行後、再Syncしてください。
+
 ## 必要環境
 
 - JDK 17+
