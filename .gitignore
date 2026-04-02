@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+build/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Android
+LifeSurvivor/android/src/main/jniLibs/
+
+# OS
+.DS_Store
+Thumbs.db

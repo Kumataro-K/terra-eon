@@ -158,10 +158,19 @@ cd LifeSurvivor
 ### Android版
 ```bash
 cd LifeSurvivor
-./gradlew :android:assembleDebug
+./gradlew :app:assembleDebug
 ```
 
 APKは `android/build/outputs/apk/debug/` に出力されます。
+
+
+## Android StudioでSyncできない場合（`error: module not specified`）
+
+- **開くフォルダは `LifeSurvivor/` を指定**してください（Android StudioのGradleプロジェクトはこの階層です）。
+- 既に別フォルダ（例: リポジトリ直下）を開いている場合は、いったん閉じて `LifeSurvivor/` を開き直してください。
+- `Gradle JDK` は **17** を指定してください。
+- うまくいかない場合は `File > Invalidate Caches...` 実行後、再Syncしてください。
+- `Run/Debug Configuration` の `Module` が空の場合は **`app`** を選択し、Gradle-aware Make を有効にしてください。
 
 ## 必要環境
 
