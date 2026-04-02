@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Android
+android/src/main/jniLibs/
+android/build/
+
+# OS
+.DS_Store
+Thumbs.db

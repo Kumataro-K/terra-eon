@@ -7,7 +7,7 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-include(":core", ":app", ":desktop")
-project(":app").projectDir = file("android")
+rootProject.name = "LifeSurvivor"
+include(":core", ":android", ":desktop")
